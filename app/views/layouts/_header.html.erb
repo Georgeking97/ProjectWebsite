@@ -1,0 +1,21 @@
+<div class="container">
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="<%= projects_path  %>">
+      <h2>Project Management</h2>
+    </a>
+    <form class="form-inline my-2" action="<%= search_project_path %>">
+      <input class="form-control mr-sm-2" name="name" type="search" placeholder="Search for projects..." aria-label="Search">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to raw("<i class=\"fas fa-chess-pawn\"></i>"), edit_user_registration_path, :class => 'btn btn-dark' %> |
+        <%= link_to raw("<i class=\"fas fa-sign-out-alt\"></i>"), destroy_user_session_path, method: :delete, :class => 'btn btn-dark'  %>
+      <% else %>
+        <%= link_to raw("<i class=\"fas fa-user-plus\"></i>"), new_user_registration_path, :class => 'btn btn-dark'  %> |
+        <%= link_to raw("<i class=\"fas fa-sign-out-alt\"></i>"), new_user_session_path, :class => 'btn btn-dark'  %>
+      <% end %>
+    </div>
+  </nav>
+</div>
