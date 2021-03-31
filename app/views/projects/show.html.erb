@@ -4,7 +4,7 @@
       <span><%= @project.name %></span>
       <div>
         <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-light' %>
-        <%= link_to 'destroy', @project, method: :delete, class: 'btn btn-dark', data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Destroy', @project, method: :delete, class: 'btn btn-dark', data: { confirm: 'Are you sure?' } %>
       </div>
     </h2>
 

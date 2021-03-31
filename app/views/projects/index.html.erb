@@ -9,15 +9,22 @@
       <%= link_to project, class: 'text-decoration-none' do %>
         <div class="card project-card mb-3">
           <div class="card-body">
-            <span class="badge badge-<%= project.badge_color %> mb-3">
+            <div class="d-flex justify-content-between">
+            <div class="project-status">
+              <span class="badge badge-<%= project.badge_color %> mb-3">
               <%= project.status %>
-            </span>
-            <span class='text-secondary'>
-              <small>
-                <%= project.percent_complete %>% complete
-              (<%= project.total_complete %>/<%= project.total_tasks %> tasks)
-              </small>
-            </span>
+              </span>
+              <span class='text-secondary'>
+                <small>
+                  <%= project.percent_complete %>% complete
+                  (<%= project.total_complete %>/<%= project.total_tasks %> tasks)
+                </small>
+              </span>
+            </div>
+            <div>
+              <%= link_to 'New Project', new_project_path, class: "btn btn-secondary btn-sm" %>
+            </div>
+            </div>
             <h5 class="card-title text-dark"><b><%= project.name %></b></h5>
             <p class="text-secondary"><%= project.description %></p>
           </div>
