@@ -14,12 +14,11 @@
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-  <body class='bg-light'>
+  <body class='bg-secondary'>
   <%= render partial: 'layouts/header' %>
-    <div class="container pt-5">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+    <div class="container">
       <%= yield %>
     </div>
+  <%= render partial: 'layouts/footer' %>
   </body>
 </html>
