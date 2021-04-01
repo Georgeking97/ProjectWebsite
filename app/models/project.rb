@@ -37,4 +37,6 @@ class Project < ApplicationRecord
   def total_tasks
     tasks.count
   end
+
+
 end

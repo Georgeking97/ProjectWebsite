@@ -19,6 +19,10 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    # Assuming when the project is edited this method is called
+    # can I just call my observer class.method here?
+    # and if so how would I do that if the other class is in
+    # ../observer/project_observer.rb
   end
 
   # POST /projects or /projects.json
@@ -66,6 +70,6 @@ class ProjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def project_params
-      params.require(:project).permit(:name, :description)
+      params.require(:project).permit(:name, :date_due, :description)
     end
 end

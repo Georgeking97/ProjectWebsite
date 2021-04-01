@@ -19,6 +19,10 @@
     <%= f.label :description %><br />
     <%= f.text_area :description, class: 'form-control' %>
   </div>
+  <div class="form-group">
+    <%= f.label :due_date %>
+    <%= f.text_area :due_date, class: 'form-control' %>
+  </div>
   <div class="form-group mb-3">
     <%= f.label :status %><br />
     <%= f.select :status, Task::STATUS_OPTIONS, {}, class: 'form-control' %>
