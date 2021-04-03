@@ -3,10 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+
 gem 'rails', '~> 6.1.3'
-gem 'u-observers'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
+gem 'warden'
 gem 'webpacker', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
@@ -42,4 +43,4 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "stimulus_reflex", "~> 3.4"
-gem "ransack", "~> 2.4"
+

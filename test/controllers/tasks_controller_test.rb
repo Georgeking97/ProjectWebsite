@@ -1,9 +1,13 @@
 require 'test_helper'
 
 class TasksControllerTest < ActionController::TestCase
+  include Devise::Test::IntegrationHelpers
+  include Devise::Test::ControllerHelpers
+
   setup do
-    @project = projects(:one)
-    @task = tasks(:one)
+    sign_in users(:user_001)
+    @project = projects(:user_001)
+    @task = tasks(:user_001)
   end
 
   test "should get index" do

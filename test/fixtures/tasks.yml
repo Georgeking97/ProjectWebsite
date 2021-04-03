@@ -1,5 +1,4 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+#task yml, a task belongs to a project
 one:
   name: MyString
   description: MyText
@@ -11,3 +10,9 @@ two:
   description: MyText
   status: MyString
   project: two
+
+user_001:
+  name: MyString
+  description: MyText
+  status: MyString
+  project: user_001

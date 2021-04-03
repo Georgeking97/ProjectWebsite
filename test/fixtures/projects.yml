@@ -1,11 +1,19 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
+#projects yml, a project has many tasks and belongs to a user
 one:
   name: MyString
+  date_due: 01/01/2020
   description: MyText
   user: one
 
 two:
   name: MyString
+  date_due: 01/01/2020
   description: MyText
   user: two
+
+user_001:
+  name: MyString
+  date_due: 01/01/2020
+  description: MyText
+  user: user_001
+

@@ -1,8 +1,11 @@
 require "test_helper"
 
 class ProjectsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
-    @project = projects(:one)
+    sign_in users(:user_001)
+    @project = projects(:user_001)
   end
 
   test "should get index" do
@@ -39,9 +42,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy project" do
-    print "we're here"
     assert_difference('Project.count', -1) do
-      puts "hey", @project
       delete project_url(@project)
     end
 

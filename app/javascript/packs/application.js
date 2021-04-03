@@ -8,7 +8,6 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import Sortable from "sortablejs"
-
 import "../stylesheets/application";
 
 document.addEventListener('turbolinks:load', () => {

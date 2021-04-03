@@ -63,13 +63,13 @@ class ProjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = current_user.projects.find_by_id(params[:id]) || current_user.projects.find_by_name(params[:name])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = current_user.projects.find_by_id(params[:id]) || current_user.projects.find_by_name(params[:name])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def project_params
-      params.require(:project).permit(:name, :date_due, :description)
-    end
+  # Only allow a list of trusted parameters through.
+  def project_params
+    params.require(:project).permit(:name, :date_due, :description)
+  end
 end

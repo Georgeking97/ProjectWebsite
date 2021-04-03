@@ -13,12 +13,13 @@
   <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-
   <body class='bg-secondary'>
   <%= render partial: 'layouts/header' %>
     <div class="container">
       <%= yield %>
     </div>
+  <%= render partial: 'layouts/externalOne' %>
+  <%= render partial: 'layouts/externalTwo' %>
   <%= render partial: 'layouts/footer' %>
   </body>
 </html>
