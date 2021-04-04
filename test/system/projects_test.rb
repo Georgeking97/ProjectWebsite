@@ -53,6 +53,6 @@ class ProjectsTest < ApplicationSystemTestCase
       click_on "Destroy", match: :first
     end
 
-    assert_text "Project was successfully destroyed"
+    assert_text "  was successfully destroyed"
   end
 end

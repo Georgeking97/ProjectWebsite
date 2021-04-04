@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: %i[ show  edit update destroy ]
+  before_action :set_video
 
   # GET /projects or /projects.json
   def index
@@ -10,6 +11,10 @@ class ProjectsController < ApplicationController
   # GET /projects/1 or /projects/1.json
   def show
     @task = @project.tasks.build
+  end
+
+  def api
+
   end
 
   # GET /projects/new
@@ -66,6 +71,10 @@ class ProjectsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_project
     @project = current_user.projects.find_by_id(params[:id]) || current_user.projects.find_by_name(params[:name])
+  end
+
+  def set_video
+    @video = YouTube.video(id: 'Qq9JRO8KI1w').html_safe
   end
 
   # Only allow a list of trusted parameters through.

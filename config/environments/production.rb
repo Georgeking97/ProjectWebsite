@@ -11,6 +11,9 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+  Yt.configure do |config|
+    config.api_key = 'AIzaSyDvkt2GI7OhcbAPZyjoqmynqQrp9NVk1To'
+  end
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false

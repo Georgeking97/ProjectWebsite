@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'projects/search', to: "projects#show", as: "search_project"
+  get '/video', to: "projects#api"
   resources :projects do
     resources :tasks
   end
