@@ -31,18 +31,5 @@ Rails.application.configure do
   config.assets.debug = true
   config.assets.quiet = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  #youtube api set up
-  Yt.configure do |config|
-    config.api_key = 'AIzaSyDvkt2GI7OhcbAPZyjoqmynqQrp9NVk1To'
-    config.log_level = :debug
-  end
-
-  #twitter api set up
-  client = Twitter::REST::Client.new do |config|
-    config.consumer_key        = "wTqru670zPIZ9f9SwZrxfF2sD"
-    config.consumer_secret     = "0riuwgZYdfVx1vE1awXoDd5f4nj5I8zO4kmQfVs16reFuyisau"
-    config.access_token        = "737957816359587840-YfMSn69aouWlb4V7kh8c78w2kU53f5K"
-    config.access_token_secret = "vozKqJkPY83lasCdgrOiCOR6ITmtCHZRdvF6gmKcVcw8I"
-  end
 
 end

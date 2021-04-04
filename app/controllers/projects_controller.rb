@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project, only: %i[ show  edit update destroy ]
   before_action :set_video
+  before_action :set_tweet
 
   # GET /projects or /projects.json
   def index
@@ -75,6 +76,10 @@ class ProjectsController < ApplicationController
 
   def set_video
     @video = YouTube.video(id: 'Qq9JRO8KI1w').html_safe
+  end
+
+  def set_tweet
+    @tweet = Feed.call
   end
 
   # Only allow a list of trusted parameters through.

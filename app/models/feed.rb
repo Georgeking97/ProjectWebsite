@@ -1,7 +1,7 @@
 # gets the twitter gem that allows the twitter API to work
 require 'twitter'
 
-module Twitter
+module Feed
   module_function
 
   def call
@@ -11,8 +11,9 @@ module Twitter
       config.access_token = '737957816359587840-rrNXjOp0Sxzgxt9pZiPyrN1ba9IQApB'
       config.access_token_secret = '5jIh5M2nu7B4Rnrcp9RNpHLRJNkIA9iyNuIYaT3ZX2v4q'
     end
-    response = client.search('#rubyonrails -rt', lang: 'en').each
+    response = client.search('#rubyonrails -rt', lang: 'en').each()
     response.each { |tweet| puts tweet.full_text }
   end
 end
+
 

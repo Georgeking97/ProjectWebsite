@@ -11,22 +11,22 @@
         <div class="card project-card mb-3">
           <div class="card-body">
             <div class="d-flex justify-content-between">
-            <div class="project-status">
+              <div class="project-status">
               <span class="badge badge-<%= project.badge_color %> mb-3">
               <%= project.status %>
               </span>
-              <span class='text-secondary'>
+                <span class='text-secondary'>
                 <small>
                   <%= project.percent_complete %>% complete
                   (<%= project.total_complete %>/<%= project.total_tasks %> tasks)
                   Due at: <%= project.date_due %>
                 </small>
               </span>
-            </div>
-            <div>
-              <%= link_to 'Edit', edit_project_path(project.id), class: 'btn btn-light' %>
-              <%= link_to 'Destroy', project, method: :delete, class: 'btn btn-dark', data: { confirm: 'Are you sure?' } %>
-            </div>
+              </div>
+              <div>
+                <%= link_to 'Edit', edit_project_path(project.id), class: 'btn btn-light' %>
+                <%= link_to 'Destroy', project, method: :delete, class: 'btn btn-dark', data: { confirm: 'Are you sure?' } %>
+              </div>
             </div>
             <h5 class="card-title text-dark"><b><%= project.name %></b></h5>
             <p class="text-secondary"><%= project.description %></p>
@@ -35,5 +35,13 @@
       <% end %>
     <% end %>
     <div class="container"> <%= @video %></div>
+    <% @tweet.each do |tweet| %>
+      <div class="card project-card mb-3">
+        <div class="card-body">
+          <%= tweet.full_text %>
+        </div>
+      </div>
+    <% end %>
+
   </div>
 </div>
