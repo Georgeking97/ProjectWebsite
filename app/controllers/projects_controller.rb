@@ -7,6 +7,12 @@ class ProjectsController < ApplicationController
   # GET /projects or /projects.json
   def index
     @projects = current_user.projects
+    if params[:q] && !params[:q].empty?
+      @projects = @projects.search(params[:q].downcase)
+    end
+    if params[:id] && !params[:id].empty?
+      @tweet = Feed.call(params[:id].downcase)
+    end
   end
 
   # GET /projects/1 or /projects/1.json
@@ -69,17 +75,20 @@ class ProjectsController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
+
+  # getting the projects based on id or name of the project
   def set_project
     @project = current_user.projects.find_by_id(params[:id]) || current_user.projects.find_by_name(params[:name])
   end
 
+  # getting the API response from youtube
   def set_video
     @video = YouTube::Call.instance.video(id: 'Qq9JRO8KI1w').html_safe
   end
 
+  # getting the API response from twitter
   def set_tweet
-    @tweet = Feed.call
+    @tweet = Feed.call("rubyonrails".downcase)
   end
 
   # Only allow a list of trusted parameters through.

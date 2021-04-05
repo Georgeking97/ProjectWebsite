@@ -33,7 +33,6 @@
   top: 0; /* Stay at the top */
   right: 0;
   background-color: #6c757d ;
-  overflow-x: hidden; /* Disable horizontal scroll */
   overflow: hidden;
 }
 
@@ -42,20 +41,26 @@
   width: 290px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
-  top: 10%; /* Stay at the top */
+  top: 12.7%; /* Stay at the top */
   right: 0;
+  bottom: 10%;
   background-color: #6c757d ;
   overflow-x: hidden; /* Disable horizontal scroll */
+  overflow-y: scroll;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
-.sidenav::-webkit-scrollbar{
+.scroll::-webkit-scrollbar{
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-.sidenav{
+.scroll{
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+
+
+
 

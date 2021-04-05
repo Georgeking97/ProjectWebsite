@@ -1,7 +1,11 @@
 <div class="sidenav">
-  <div class="card mb-1">
+  <div class="card">
     <div class="card-body">
-      <h2>See tweets about ruby!</h2>
+      <h2>See tweets!</h2>
+      <%= form_tag("/projects", method: 'get') do %>
+        <%= text_field_tag :id, "", class: 'form-control mr-sm-2', placeholder: 'Search for tweets...' %>
+        <%= submit_tag("Search", class: "btn btn-dark") %>
+      <% end %>
     </div>
   </div>
   <div class="scroll">
@@ -41,7 +45,7 @@
               </span>
               </div>
               <div>
-                <%= link_to 'Edit', edit_project_path(project.id), class: 'btn btn-light' %>
+                <%= link_to 'Edit', edit_project_path(project.id), class: 'btn btn-secondary' %>
                 <%= link_to 'Destroy', project, method: :delete, class: 'btn btn-dark', data: { confirm: 'Are you sure?' } %>
               </div>
             </div>

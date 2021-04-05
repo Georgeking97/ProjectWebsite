@@ -1,5 +1,3 @@
-require 'yt'
-
 class Project < ApplicationRecord
   has_many :tasks
   belongs_to :user
@@ -40,5 +38,7 @@ class Project < ApplicationRecord
     tasks.count
   end
 
-
+  def self.search(params)
+    where("LOWER(name) LIKE ?", "%#{params}%")
+  end
 end
