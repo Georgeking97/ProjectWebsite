@@ -23,3 +23,39 @@
 .icon{
   font-size: 1.1rem;
 }
+
+/* formatting the twitter scroll view */
+.sidenav{
+  height: 90%; /* Full-height: remove this if you want "auto" height */
+  width: 290px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #6c757d ;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  overflow: hidden;
+}
+
+.scroll {
+  height: 90%; /* Full-height: remove this if you want "auto" height */
+  width: 290px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 10%; /* Stay at the top */
+  right: 0;
+  background-color: #6c757d ;
+  overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidenav::-webkit-scrollbar{
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sidenav{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+

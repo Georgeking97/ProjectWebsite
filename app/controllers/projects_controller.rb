@@ -75,7 +75,7 @@ class ProjectsController < ApplicationController
   end
 
   def set_video
-    @video = YouTube.video(id: 'Qq9JRO8KI1w').html_safe
+    @video = YouTube::Call.instance.video(id: 'Qq9JRO8KI1w').html_safe
   end
 
   def set_tweet
