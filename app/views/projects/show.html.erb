@@ -3,7 +3,7 @@
     <h2 class="card-title d-flex justify-content-between mb-4">
       <span><%= @project.name %></span>
       <div>
-        <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-light' %>
+        <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-secondary' %>
         <%= link_to 'Destroy', @project, method: :delete, class: 'btn btn-dark', data: { confirm: 'Are you sure?' } %>
       </div>
     </h2>
@@ -44,12 +44,10 @@
                     <div class='task-status'>
                       <i class="fas fa-grip-vertical grip text-secondary mr-1"></i>
                       <span class="badge badge-<%= task.badge_color %> mb-3"><%= task.status %></span>
-                    </div>
-                    <div class='task-due-date'>
-                      <span class="badge badge mb-3"><%= task.due_date %></span>
+                      <small class="text-secondary"> Due at: <%= task.due_date.strftime("%d-%m-%Y") %></small>
                     </div>
                     <div>
-                      <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-light btn-sm' %>
+                      <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-secondary btn-sm' %>
                       <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-dark btn-sm' %>
                     </div>
                   </div>

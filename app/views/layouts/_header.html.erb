@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-2">
   <nav class="navbar navbar-dark bg-dark">
 
     <a class="navbar-brand" href="<%= projects_path %>">
@@ -10,7 +10,7 @@
         <%= text_field_tag :q, "", class: 'form-control mr-sm-2', placeholder: 'Search for projects...' %>
         <%= submit_tag("Search", class: "btn btn-secondary") %>
       <% end %>
-      <div class="test p-3">
+      <div class="test">
         <% if user_signed_in? %>
           <%= link_to raw("<i class=\"fas fa-chess-pawn\"></i>"), edit_user_registration_path, :class => 'btn btn-dark' %>
           |

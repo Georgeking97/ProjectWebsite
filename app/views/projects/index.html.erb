@@ -3,8 +3,12 @@
     <div class="card-body">
       <h2>See tweets!</h2>
       <%= form_tag("/projects", method: 'get') do %>
-        <%= text_field_tag :id, "", class: 'form-control mr-sm-2', placeholder: 'Search for tweets...' %>
-        <%= submit_tag("Search", class: "btn btn-dark") %>
+        <div class="test mb-1">
+          <%= text_field_tag :id, "", class: 'form-control mr-sm-2', placeholder: 'Search for tweets...' %>
+        </div>
+        <div class="test">
+          <%= submit_tag("Search", class: "btn btn-dark") %>
+        </div>
       <% end %>
     </div>
   </div>
@@ -18,15 +22,12 @@
     <% end %>
   </div>
 </div>
-
-
 <div class="card mb-2">
   <div class="card-body">
     <h2 class="card-title d-flex justify-content-between mb-4">
       <span>Projects</span>
       <%= link_to 'New Project', new_project_path, class: "btn btn-dark" %>
     </h2>
-
     <% @projects.each do |project| %>
       <%= link_to project, class: 'text-decoration-none' do %>
         <div class="card project-card mb-3">
@@ -39,8 +40,8 @@
                 <span class='text-secondary'>
                 <small>
                   <%= project.percent_complete %>% complete
-                  (<%= project.total_complete %>/<%= project.total_tasks %> tasks)
-                  Due at: <%= project.date_due %>
+                  (<%= project.total_complete %>/<%= project.total_tasks %> tasks) ||
+                  Due at: <%= project.date_due.strftime("%d-%m-%Y") %>
                 </small>
               </span>
               </div>
@@ -57,12 +58,12 @@
     <% end %>
   </div>
 </div>
-<div class="card mb-3">
+<div class="card">
   <div class="card-body">
     <h2>
-      <p class="text-center">
-        Want to improve your projects? watch below!
-      </p>
+      <h2 class="">
+        Want to improve your projects? Watch below!
+      </h2>
     </h2>
     <div class="card project-card mb-3">
       <div class="card-body">

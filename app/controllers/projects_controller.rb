@@ -20,10 +20,6 @@ class ProjectsController < ApplicationController
     @task = @project.tasks.build
   end
 
-  def api
-
-  end
-
   # GET /projects/new
   def new
     @project = current_user.projects.build
@@ -83,7 +79,7 @@ class ProjectsController < ApplicationController
 
   # getting the API response from youtube
   def set_video
-    @video = YouTube::Call.instance.video(id: 'Qq9JRO8KI1w').html_safe
+    @video = YouTube::Call.instance.video.html_safe
   end
 
   # getting the API response from twitter
