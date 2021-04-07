@@ -44,7 +44,7 @@
                     <div class='task-status'>
                       <i class="fas fa-grip-vertical grip text-secondary mr-1"></i>
                       <span class="badge badge-<%= task.badge_color %> mb-3"><%= task.status %></span>
-                      <small class="text-secondary"> Due at: <%= task.due_date.strftime("%d-%m-%Y") %></small>
+                      <small class="text-secondary"> Due at: </small>
                     </div>
                     <div>
                       <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-secondary btn-sm' %>
