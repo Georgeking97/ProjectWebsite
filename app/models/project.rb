@@ -41,4 +41,8 @@ class Project < ApplicationRecord
   def self.search(params)
     where("LOWER(name) LIKE ?", "%#{params}%")
   end
+
+  def overdue
+    date_due <= Date.today
+  end
 end

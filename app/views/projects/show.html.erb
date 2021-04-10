@@ -44,7 +44,11 @@
                     <div class='task-status'>
                       <i class="fas fa-grip-vertical grip text-secondary mr-1"></i>
                       <span class="badge badge-<%= task.badge_color %> mb-3"><%= task.status %></span>
-                      <small class="text-secondary"> Due at: </small>
+                      <% if task.due_date.nil? %>
+                        <small class="text-secondary"> No due date has been set </small>
+                      <% else %>
+                        <small class="text-secondary"> Due at: <%= task.due_date.strftime("%d-%m-%Y") %> </small>
+                      <% end %>
                     </div>
                     <div>
                       <%= link_to 'Edit', edit_project_task_path(task.project, task), class: 'btn btn-secondary btn-sm' %>
@@ -54,7 +58,11 @@
                   <h5 class="card-title mb-2">
                     <span><%= task.name %></span>
                   </h5>
-                  <p><%= task.description %></p>
+                  <% if task.description.nil? %>
+                    <p>No description has been set</p>
+                  <% else %>
+                    <p><%= task.description %></p>
+                  <% end %>
                 </div>
               </div>
             </li>

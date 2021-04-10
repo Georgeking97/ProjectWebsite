@@ -38,14 +38,13 @@ class ProjectsTest < ApplicationSystemTestCase
     fill_in "Name", with: @project.name
     click_on "Update Project"
 
-    assert_text "Project was successfully updated"
+    assert_selector "span", text: "MyString"
   end
 
   test "destroying a Project" do
     visit projects_url
     click_on "New Project"
 
-    fill_in "Description", with: @project.description
     fill_in "Name", with: @project.name
     click_on "Create Project"
     visit projects_url
@@ -53,6 +52,6 @@ class ProjectsTest < ApplicationSystemTestCase
       click_on "Destroy", match: :first
     end
 
-    assert_text "  was successfully destroyed"
+    assert_selector "span", text: "Projects"
   end
 end

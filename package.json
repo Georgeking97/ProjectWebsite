@@ -6,9 +6,13 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.2.1",
+    "bootstrap": "^4.6.0",
     "flatpickr": "^4.6.9",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
     "sortablejs": "^1.13.0",
     "stimulus": "^2.0.0",
+    "stimulus-flatpickr": "^1.4.0",
     "stimulus_reflex": "3.4.1",
     "turbolinks": "^5.2.0"
   },

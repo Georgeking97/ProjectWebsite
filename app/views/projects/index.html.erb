@@ -50,7 +50,14 @@
                 <small>
                   <%= project.percent_complete %>% complete
                   (<%= project.total_complete %>/<%= project.total_tasks %> tasks) ||
-                  Due at: <%= project.date_due %>
+                  <% if project.date_due.nil? %>
+                    No due date has been set
+                  <% else %>
+                    Due at: <%= project.date_due.strftime("%d-%m-%Y") %>
+                    <% if project.overdue %>
+                      <h3 style="color: #730E15"> Overdue! </h3>
+                    <% end %>
+                  <% end %>
                 </small>
               </span>
                 </div>
@@ -60,7 +67,11 @@
                 </div>
               </div>
               <h5 class="card-title text-dark"><b><%= project.name %></b></h5>
-              <p class="text-secondary"><%= project.description %></p>
+              <% if project.description.empty? %>
+                <p>No description has been set</p>
+              <% else %>
+                <p><%= project.description %></p>
+              <% end %>
             </div>
           </div>
         <% end %>
